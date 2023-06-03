@@ -1,16 +1,34 @@
-# This is a sample Python script.
+import urllib.request
+import requests
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+#opener = urllib.build_opener()
+
+#response = opener .open ("https://httpbin.org/get")
+
+#print(response.read()
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+
+#res = requests.post ("https://httpbin.org/post", data-"Test data hello world", headers-("hi": "My title"})
+#print(res.text)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+#response = requests. get ("https: //httpbin.org/get")
+#print (response.content)
+
+coin_list = []
+
+response = requests.get("https://coinmarketcap.com/")
+#print(response.text)
+response_text = response.text
+
+response_parse = response_text.split("<span>")
+for parse_elem1 in response_parse:
+    if parse_elem1.startswith("$"):
+        for parse_elem2 in parse_elem1.split("</span>"):
+            if parse_elem1.startswith("$") and  parse_elem2[1].isdigit():
+                coin_list.append(parse_elem2)
+
+btc = coin_list[0]
+print("BTC =", btc)
