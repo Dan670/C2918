@@ -1,16 +1,26 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+class Football_club:
+    def __init__(self):
+        super().__init__()
+        self.students1 = "90 students"
+        self.teachers1 = "3 teachers"
+        self.balls1 = "10 balls"
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+class Baseball_club:
+    def __init__(self):
+        super().__init__()
+        self.students2 = "90 students"
+        self.teachers2 = "3 teachers"
+        self.balls2 = "100 balls"
+        self.bats = "30 bats"
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+class School(Football_club, Baseball_club):
+    def print_info(self):
+        print(self.students1)
+        print(self.teachers1)
+        print(self.balls1)
+        print(self.students2)
+        print(self.teachers2)
+        print(self.balls2)
+        print(self.bats)
