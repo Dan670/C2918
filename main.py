@@ -1,51 +1,44 @@
-import urllib.request
-import requests
-
-#opener = urllib.build_opener()
-
-#response = opener .open ("https://httpbin.org/get")
-
-#print(response.read()
+class system_block:
+    def __init__(self):
+        super().__init__()
+        self.memory = "Samsung SSD 4Tb"
+        self.video_card = "NVIDIA GeForce RTX 3060Ti"
+        self.processor = "AMD Ryzen 7 5800x 8-Core"
 
 
+class Display:
+    def __init__(self):
+        super().__init__()
+        self.resolution = "Aorus 240Hz 24'' "
 
-#res = requests.post ("https://httpbin.org/post", data-"Test data hello world", headers-("hi": "My title"})
-#print(res.text)
+class keyboard:
+    def __init__(self):
+        super().__init__()
+        self.resolution = "Logitech Gaming PRO"
+
+class headphones:
+    def __init__(self):
+        super().__init__()
+        self.resolution = "Logitech G PRO X"
+
+class mouse:
+    def __init__(self):
+        super().__init__()
+        self.resolution = "Razer Viper Ultimate"
 
 
 
-#response = requests. get ("https: //httpbin.org/get")
-#print (response.content)
 
-#coin_list = []
+class PC(Display, Computer):
+    def print_info(self):
+        print(self.resolution)
+        print(self.memory)
+        print(self.video_card)
+        print(self.processor)
 
-#response = requests.get("https://coinmarketcap.com/")
-#print(response.text)
-#response_text = response.text
 
-#response_parse = response_text.split("<span>")
-#for parse_elem1 in response_parse:
-    #if parse_elem1.startswith("$"):
-        #for parse_elem2 in parse_elem1.split("</span>"):
-            #if parse_elem1.startswith("$") and  parse_elem2[1].isdigit():
-                #coin_list.append(parse_elem2)
+HyperPC = PC()
+HyperPC.print_info()
 
-#btc = coin_list[0]
-#print("BTC =", btc)
 
-coin_list = []
 
-response = requests.get("https://bank.gov.ua/")
-response_text = response.text
-
-response_parse = response_text.split("<span>")
-
-for parse_elem1 in response_parse:
-    if not parse_elem1.startswith("₴"):
-        continue
-    for parse_elem2 in parse_elem1.split("</span>"):
-        if parse_elem2.startswith("₴") and parse_elem2[1].isdigit():
-            coin_list.append(parse_elem2)
-
-hrivnya = coin_list[0]
-print("hrivnya =", hrivnya)
