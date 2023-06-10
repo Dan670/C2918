@@ -1,4 +1,4 @@
-class system_block:
+class System_block:
     def __init__(self):
         super().__init__()
         self.memory = "Samsung SSD 4Tb"
@@ -9,36 +9,39 @@ class system_block:
 class Display:
     def __init__(self):
         super().__init__()
-        self.resolution = "Aorus 240Hz 24'' "
+        self.monitor = "Aorus 240Hz 24'' "
 
-class keyboard:
+class Keyboard:
     def __init__(self):
         super().__init__()
-        self.resolution = "Logitech Gaming PRO"
+        self.keyboard = "Logitech Gaming PRO"
 
-class headphones:
+class Headphones:
     def __init__(self):
         super().__init__()
-        self.resolution = "Logitech G PRO X"
+        self.headphones = "Logitech G PRO X"
 
-class mouse:
+class Mouse:
     def __init__(self):
         super().__init__()
-        self.resolution = "Razer Viper Ultimate"
+        self.mouse = "Razer Viper Ultimate"
 
 
 
 
-class PC(Display, Computer):
+class PC(Display, System_block, Keyboard, Headphones, Mouse):
     def print_info(self):
-        print(self.resolution)
+        print(self.monitor)
         print(self.memory)
         print(self.video_card)
         print(self.processor)
+        print(self.keyboard)
+        print(self.headphones)
+        print(self.mouse)
 
 
-HyperPC = PC()
-HyperPC.print_info()
+MyPC = PC()
+MyPC.print_info()
 
 
 
